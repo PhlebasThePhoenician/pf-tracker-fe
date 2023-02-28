@@ -4,7 +4,9 @@ export class ApiService {
 
     
     async get<T>(url: string): Promise<T | undefined> {
-        const response =  await fetch(this.baseUrl + url);
+        const response =  await fetch(this.baseUrl + url, {
+            credentials: 'include', // include, *same-origin, omit
+        });
         if (response) {
             try {
                 const data = await response.json();

@@ -35,3 +35,10 @@ npm run test:unit
 ```sh
 npm run lint
 ```
+
+### todo
+- "login-check", now logged-in state is lost in reload
+- global store for accounts
+- expense-list by time 
+- budget planning feature
+- test coverage

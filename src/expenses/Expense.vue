@@ -5,6 +5,10 @@ import type { Expense, NewExpense } from './expense.type';
 import type { ExpenseType } from '@/expense-types/expense-type.type';
 import type { PaymentMethod } from '@/payment-methods/payment-method.type';
 
+import { useAccountStore } from '@/stores/account.store';
+
+const {error, accounts, loadAccounts } = useAccountStore();
+
 const newExpense = reactive<NewExpense>(
     {
         when: Math.trunc(Date.now()/1000),
@@ -18,6 +22,10 @@ const newExpense = reactive<NewExpense>(
 
 const {expenses, expenseTypes, paymentMethods, addExpense} = useExpense();
 
+const handleAddExpense = async (expense: NewExpense) => {
+    await addExpense(newExpense);
+    loadAccounts();
+}
 </script>
 <template>
     <h2>New expense {{ newExpense.where }}</h2>
@@ -36,7 +44,7 @@ const {expenses, expenseTypes, paymentMethods, addExpense} = useExpense();
             <td><select name="expenseType" v-model="newExpense.expenseType">
                 <option v-for="expenseType in expenseTypes" :value="expenseType.id">{{ expenseType.name }}</option>
             </select></td>
-            <td colspan="2"><button @click="addExpense(newExpense)">Add</button></td>
+            <td colspan="2"><button @click="handleAddExpense(newExpense)">Add</button></td>
         </tr>
         
     </table>
