@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import AccountBanner from './accounts/AccountBanner.vue';
-import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>

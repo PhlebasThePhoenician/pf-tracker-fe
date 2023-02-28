@@ -38,7 +38,7 @@ npm run lint
 
 ### todo
 - "login-check", now logged-in state is lost in reload
-- global store for accounts
+- global store for accounts - Done
 - expense-list by time 
 - budget planning feature
 - test coverage
