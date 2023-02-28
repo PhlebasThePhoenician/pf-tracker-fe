@@ -7,7 +7,6 @@ const store = useAccountStore();
 store.loadAccounts();
 const { accounts } = storeToRefs(store);
 
-console.log('ACCOUNT BANNER !!');
 </script>
 <template>
 <div id="accounts-banner">

@@ -12,8 +12,6 @@ export default function useAccount(): {
     const accountService = inject<AccountService>(accountServiceKey) as AccountService;
     const accounts = ref<Account[]>([]);
     accountService.getAccounts().then( (result) => {
-        console.log('Got result ');
-        console.log(result);
         accounts.value = result;
     });
     const addAccount = async (newAccount: Account) => {

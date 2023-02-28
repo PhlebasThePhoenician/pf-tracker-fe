@@ -12,7 +12,6 @@ export default function useExpenseType(id?: string): {
     const expenseTypes = ref<ExpenseType[]>([]);
 
     expenseTypeService.getExpenseTypes().then( (result) => {
-        console.log('Got result');
         expenseTypes.value = result;
     })
     const addExpenseType = async (newExpenseType : ExpenseType) => {

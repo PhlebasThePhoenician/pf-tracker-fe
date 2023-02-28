@@ -15,8 +15,6 @@ export const useAccountStore = defineStore('accounts', () => {
                 if (!result) {
                     error.value = 'Error loading account data!';
                 }
-                console.log('Loaded accounts :');
-                console.log(result);
                 accounts.value = result;
 
             })
@@ -24,6 +22,6 @@ export const useAccountStore = defineStore('accounts', () => {
             error.value = "Error loading accounts"
         }
     }
-    
+
     return { error, accounts, loadAccounts}
 });

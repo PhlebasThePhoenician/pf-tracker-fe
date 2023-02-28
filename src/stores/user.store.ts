@@ -36,7 +36,7 @@ export const userStore = defineStore({
                         isAuthenticated: true
                     }
                 }
-                console.log('SEt user as logged in !');
+                console.log('Set user as logged-in');
                 await router.push(this.returnUrl || '/');
             } catch (e) {
                 this.error = 'Authentication failed!';

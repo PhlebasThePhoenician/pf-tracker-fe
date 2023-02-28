@@ -15,15 +15,7 @@ const loginData = reactive<Credentials>({
 const store = userStore();
 
 const login = async () => {
-    //const result = await loginService.login(loginData);
     const result = await store.login(loginData);
-    /*
-    if (result) {
-        console.log('login success');
-    } else {
-        console.log('login fail!');
-    }
-    */
 }
 
 </script>

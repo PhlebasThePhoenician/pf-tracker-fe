@@ -32,8 +32,6 @@ export default function useExpense(id?: string): {
     })
 
     const addExpense = async (newExpense: NewExpense) => {
-        console.log('NEW EXPENSE');
-        console.log(newExpense);
         const expense = {
             when: newExpense.when,
             sum: newExpense.sum,
